@@ -515,3 +515,7 @@ Sabemos que el trabajo en equipo, es mucho más eficaz y tiene un mayor número 
 Cada pull request que realices te ayudara a crecer como programador o programadora y además poder ayudar a miles de personas a saber más de los comandos de Git ❤️
 
 Si te ha parecido útil este repositorio apóyalo con una estrellita ⭐
+
+## Licencia
+
+Consulte el archivo [LICENSE](https://github.com/davidorellana98/aprende-git/blob/main/LICENSE.md) para conocer los derechos y limitaciones de la licencia (MIT).
