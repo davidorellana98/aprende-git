@@ -1,189 +1,6 @@
-<h1 align="center">Aprende GIT</h1>
+<h1 align="center">Comandos de Git</h1>
 
 ![portada](https://raw.github.com/davidorellana98/aprende-git/main/images/portada.png)
-
-## Comandos de Linux
-
-- **Comando de ayuda**
-
-```xml
-help <nombre del comando>
-- o -
-<nombre del comando> --help
-```
-Estos comandos te ayudarán a saber otras opciones que existen en un comando en especifico (toda la información será presentada en la terminal).
-
-- **Comandos de limpieza y salida de la terminal**
-
-```xml
-clear
-- o -
-ctrl + l // Windows
-```
-Estos comandos te permiten tener limpia la terminal.
-
-```xml
-exit
-```
-Este comando te permite salir de la terminal.
-
-- **Comandos para ver archivos y directorios**
-
-```xml
-pwd
-```
-Este comando te permite ver la ruta especifica donde te encuentras actualmente.
-
-```xml
-find -name "<nombre del archivo o directorio>"
-```
-Este comando te permite saber la ruta exacta, donde se encuentra dicho archivo o directorio.
-
-```xml
-find -iname "<nombre del archivo o directorio>"
-```
-Este comando va ignorar las letras mayúsculas o minúsculas en la búsqueda de cierto archivo o directorio.
-
-```xml
-ls
-```
-Este comando te permite ver el listado de los archivos y directorios en el lugar que te encuentras actualmente.
-
-```xml
-ls -l 
-- o - 
-ls -lh
-```
-Estos comandos te permiten ver el listado de archivos y directorios con información más especifica, como es la hora y fecha de su última modificación.
-
-```xml
-ls -a
-```
-Este comando te permite ver el listado de archivos y directorios generales y ocultos.
-
-```xml
-ls -s
-```
-Este comando te permite ver el listado de archivos con su peso en memoria que tiene actualmente.
-
-```xml
-ls -r
-```
-Este comando te permite ver el listado de archivos y directorios de manera descendente hasta ascendente.
-
-- **Comandos para direccionarse a un directorio en especifico**
-
-```xml
-cd
-```
-Este comando te direccionara al home, donde estará toda la cabecera raíz del sistema.
-
-```xml
-cd <nombre del directorio>
-```
-Este comando te permite abrir un directorio y poder interactuar con dicho directorio (no permite abrir archivos).
-
-```xml
-cd ..
-```
-Este comando te permite retroceder un paso, en la navegación de directorios.
-
-```xml
-cd -
-```
-Este comando te permite regresar al lugar que estabas anteriormente de manera automática, es útil cuando cuando has cambiado a un directorio largo y no te acuerdas su ruta de llegada.
-
-- **Comandos para crear archivos y directorios**
-
-```xml
-mkdir <nombre del directorio>
-```
-Este comando te permite crear directorios, teniendo en cuenta que si ingresa espacios creara otro directorio adicional.
-
-```xml
-touch <nombre del archivo>
-```
-Este comando te permite crear archivos o varios archivos con extensiones, por ejemplo: test.txt, web.html, entre otras.
-
-- **Comandos para ver el contenido y características de un archivo**
-
-```xml
-file <nombre del archivo>
-```
-Este comando describe las características del tipo de archivo a analizar.
-
-```xml
-echo "<cadena de caracteres>" > <nombre del archivo>
-```
-Este comando te permite crear mensajes desde la terminal, para posteriormente sobrescribir el mensaje del archivo, si el archivo no existe lo creara automáticamente.
-
-```xml
-echo "<cadena de caracteres>" >> <nombre del archivo>
-```
-Este comando te permite crear mensajes desde la terminal para pasarlos a un archivo, concatenándolo con el mensaje anterior, que tenía en su archivo.
-
-```xml
-cat <nombre del archivo>
-```
-Este comando te permite visualizar el contenido que tiene el archivo seleccionado, es muy útil para ver contenidos muy breves.
-
-```xml
-cat -n <nombre del archivo>
-```
-Este comando te permite visualizar el contenido del archivo especificando en su costado el número de líneas que están presentes.
-
-- **Comandos para mover y copiar archivos y directorios**
-
-```xml
-mv <nombre del directorio o archivo que se va a mover> <nombre del directorio donde se va a mover>
-```
-Este comando te permite mover un directorio o archivo a otro directorio, especificando el lugar que se desea mover. Además si mueve dos archivos, el archivo que se coloco ultimo será el que perdure con su nombre actual, no importa el formato de extensión en el que lo va a renombrar.
-
-```xml
-cp <nombre del archivo que se va a copiar> <nombre del directorio donde se va a copiar el archivo>
-```
-Este comando te permite copiar un archivo y destinarlo a un directorio en especifico. También puedes renombrar el nombre del archivo sin perder su información.
-
-```xml
-cp -r <nombre del directorio que se va a copiar> <nombre del directorio donde se va a copiar>
-```
-Este comando te permite copiar el contenido que hay en un directorio y trasladarla a un nuevo directorio (si la carpeta no existe, la creara automáticamente).
-
-- **Comandos para borrar archivos y directorios**
-
-```xml
-rm <nombre del archivo>
-```
-Este comando te permite borrar un archivo (no borra carpetas o directorios).
-
-```xml
-rm -i <nombre del archivo>
-```
-Este comando te lanzara un mensaje si desea o no borrar dicho archivo; para poder borrar el archivo se colocara la palabra [yes] y si no desea borrarlo colocara la letra [n].
-
-```xml
-rm -r <nombre del archivo o directorio>
-```
-Este comando te permite borrar archivos y además directorios.
-
-- **Comandos para crear alias**
-
-```xml
-alias
-```
-Este comando te permite ver el listados de alias que se han creado.
-
-```xml
-alias <nombre del alias>="<nombre del comando>"
-```
-Este comando te permite colocar un nombre más corto y personalizado a cierto comando que tiene una estructura larga.
-
-```xml
-unalias <nombre del alias creado>
-```
-Este comando te permite borrar un alias creado con anterioridad.
-
-## Comandos de Git
 
 - **Comando para saber la versión de git instalada**
 
@@ -196,11 +13,19 @@ Este comando te permite saber la versión actual que tienes instalada en tu orde
 
 ```xml
 git help <nombre del comando>
+
+// Ejemplo
+
+git help status
 ```
 Este comando abrirá una página en el navegador indicando la información de ayuda que existe en un comando en especifico.
 
 ```xml
 git <nombre del comando> -h
+
+// Ejemplo
+
+git add -h
 ```
 Este comando te permite ver las opciones de ayuda que existe acerca de un comando en especifico (la información se representara desde la terminal).
 
@@ -225,16 +50,6 @@ gitk
 ```
 Este comando te muestra un software con todos los procesos que se han hecho en el proyecto y tiene una representación más visual del seguimiento de cada archivo, tiene el estilo de las plataforma como Github Desktop, GitKraken, entre otras, con ciertas limitaciones.
 
-- **Comando para abrir un editor de texto**
-
-```xml
-vim <nombre del archivo>
-```
-Este comando abrirá el editor de texto llamado VIM, con el contenido que tiene dicho archivo. Para poder escribir y salir del editor, sigue los siguientes pasos:
-1. Presione (**i**) para comenzar a escribir en el editor.
-2. Presione (**esc**) para dejar de escribir.
-3. Inserte (**:wq**) para guardar lo escrito y poder salir.
-
 - **Comandos para configurar Git**
 
 ```xml
@@ -246,16 +61,28 @@ Estos comandos te permite ver la lista de configuración actual de git.
 
 ```xml
 git config --global user.name "<Tu nombre y apellido>"
+
+// Ejemplo
+
+git config --global user.name "David Orellana"
 ```
 Este comando te permite colocar un nombre de usuario a git para tener presente quien trabaja en dicho proyecto.
 
 ```xml
 git config --global user.email <dirección de correo electrónico>
+
+// Ejemplo
+
+git config --global user.email ejemplo@gmail.com
 ```
 Este comando te permite asignar un correo electrónico a la configuración de git, es recomendable utilizar el email que tiene por defecto en su cuenta de Github, Gitlab o Bitbucket.
 
 ```xml
 git config --global init.defaultBranch <nombre de la rama principal>
+
+// Ejemplo
+
+git config --global init.defaultBranch main
 ```
 Este comando te permite cambiar el nombre de la rama principal de master a main o viceversa.
 
@@ -263,6 +90,10 @@ Este comando te permite cambiar el nombre de la rama principal de master a main 
 
 ```xml
 git add <nombre del archivo>
+
+// Ejemplo
+
+git add test.js
 ```
 Este comando te permite añadir un archivo especifico que estaba en el working directory (espacio de trabajo) al staging area (área de preparación).
 
@@ -285,11 +116,19 @@ Este comando te abrirá un editor de texto (vim) para poder asignarle un mensaje
 
 ```xml
 git commit -m "<comentario de los cambios>"
+
+// Ejemplo
+
+git commit -m "primer commit"
 ```
 Este comando te permite asignar un mensaje de confirmación a los cambios realizados, sin la necesidad de abrir un editor de texto.
 
 ```xml
 git commit -am "<comentario de los cambios>"
+
+// Ejemplo
+
+git commit -am "Actualización README.md"
 ```
 Este comando te permite agregar (utilizando en su interior el comando git add) y asignar un mensaje de confirmación a los cambios realizados, todo desde este único comando. Hay que tener en cuenta que este comando solo esta permitido para archivos modificados, no para archivos nuevos.
 
@@ -300,6 +139,10 @@ Este comando te abrirá un editor de texto para modificar el mensaje de confirma
 
 ```xml
 git commit --amend -m "<nuevo comentario de los cambios>"
+
+// Ejemplo
+
+git commit --amend -m "adición de nueva fecha"
 ```
 Este comando te permite modificar el mensaje de confirmación más reciente para sobrescribirlo y hacer un nuevo mensaje de confirmación, sin necesidad de abrir un editor de texto.
 
@@ -317,11 +160,19 @@ Este comando te permite visualizar el listado de ramas creadas.
 
 ```xml
 git branch <nombre de la nueva rama>
+
+// Ejemplo
+
+git branch develop
 ```
 Este comando te permite crear una nueva rama de trabajo, pero no te direcciona a dicha rama creada.
 
 ```xml
 git branch -m <antiguo nombre de la rama> <nuevo nombre de la rama>
+
+// Ejemplo
+
+git branch -m develop release
 ```
 Este comando te permite cambiar el nombre de una rama existente.
 
@@ -329,6 +180,12 @@ Este comando te permite cambiar el nombre de una rama existente.
 git checkout -b <nombre de la rama>
 - o -
 git switch -c <nombre de la rama>
+
+// Ejemplo
+
+git checkout -b test
+- o -
+git switch -c test
 ```
 Estos comandos te permiten crear una nueva rama y direccionarte a dicha rama de manera automática.
 
@@ -336,6 +193,12 @@ Estos comandos te permiten crear una nueva rama y direccionarte a dicha rama de 
 git checkout <nombre de la rama>
 - o -
 git switch <nombre de la rama>
+
+// Ejemplo
+
+git checkout test
+- o -
+git switch test
 ```
 Estos comandos te permiten cambiar a una rama especifica, pero si la rama no existe, no la crea ni te cambia a dicha rama.
 
@@ -346,11 +209,19 @@ Este comando te permite regresar a la ultima rama utilizada anteriormente.
 
 ```xml
 git branch -D <nombre de la rama>
+
+// Ejemplo
+
+git branch -D develop
 ```
 Este comando te permite eliminar una rama existente de manera local de forma forzosa ignorando cualquier advertencia.
 
 ```xml
 git branch -d <nombre de la rama>
+
+// Ejemplo
+
+git branch -d hotfix
 ```
 Este comando te permite eliminar una rama existente de manera local, una vez que se haya mergeado (fusionado) con otra rama o eliminar una rama sin contenido de información.
 
@@ -373,11 +244,19 @@ Este comando te permite ver todo el historial de commits realizados con su respe
 
 ```xml
 git log --author "<nombre del autor>"
+
+// Ejemplo
+
+git log --author "David Orellana"
 ```
 Este comando te permite saber quien esta realizando los cambios en dicha actividad del proyecto.
 
 ```xml
-git log --grep <cadena de texto>
+git log --grep "<cadena de texto>"
+
+// Ejemplo
+
+git log --grep "Primer commit"
 ```
 Este comando te permite averiguar si en dichos commits realizados se encuentra dicha cadena de texto.
 
@@ -395,6 +274,12 @@ Este comando te permite visualizar de una manera más estructurada como están c
 git log -n <número>
 - o -
 git log -<número>
+
+// Ejemplo
+
+git log -n 3
+- o -
+git log -3
 ```
 Este comando te permite visualizar un determinado número de commit realizados recientemente, comenzando desde el Head o cabecera.
 
@@ -407,16 +292,28 @@ Este comando te permite visualizar todo el registro de acciones que se han hecho
 
 ```xml
 git show <nombre del archivo>
+
+// Ejemplo
+
+git show index.html
 ```
 Este comando te muestra la información que se añadió recientemente, comparándola con la información anterior.
 
 ```xml
 git diff <hast de commit 1> <hast de commit 2>
+
+// Ejemplo
+
+git diff 6c69d583f81fe58fa86ce453272163187779ffb6 a49adc92b1e360d1673d9df077587ed02c66e6b7
 ```
 Este comando te permite comparar la información que hay entre dos commits añadidos al repositorio local.
 
 ```xml
 git checkout <hash del commit>
+
+// Ejemplo
+
+git checkout a49adc92b1e360d1673d9df077587ed02c66e6b7
 ```
 Este comando te permite ver la información del contenido que tiene cierto commit en particular (hay que tener en cuenta el hash del commit para poder interactuar).
 
@@ -424,26 +321,46 @@ Este comando te permite ver la información del contenido que tiene cierto commi
 
 ```xml
 git restore --staged <nombre del archivo>
+
+// Ejemplo
+
+git restore --staged test.txt
 ```
 Este comando te permite regresar un archivo que estaba añadido al staging area al working directorio o area de trabajo, sin perder la información.
 
 ```xml
 git restore <nombre del archivo>
+
+// Ejemplo
+
+git restore test.txt
 ```
 Este comando te permite descartar los cambios que se realizo en el archivo, antes de añadirlo al staging area (no esta permitido para archivos nuevos). Además permite restaurar un archivo que fue elimando, antes de añadir y hacer commit a dicho archivo, ya que si se lo realizada está especificando que a eliminado dicho archivo.
 
 ```xml
 git reset <hash del commit>
+
+// Ejemplo
+
+git reset 6c69d583f81fe58fa86ce453272163187779ffb6
 ```
 Este comando te permite regresar a un hash de commit especifico, teniendo en cuenta que los archivos que estuvieron antes, vuelven al working directory para ser añadidos y comitiados nuevamente, sin perder la información.
 
 ```xml
 git reset --soft <hash del commit>
+
+// Ejemplo
+
+git reset --soft 6c69d583f81fe58fa86ce453272163187779ffb6
 ```
 Este comando te permite regresar a un hash de commit especifico, teniendo en cuenta que los archivos que estuvieron antes vuelven al staging area, para ser comitiados nuevamente (no se pierde la información, que fue añadida en los archivos anteriormente).
 
 ```xml
 git reset --hard <hash del commit>
+
+// Ejemplo
+
+git reset --hard bc7bd7cdd3540cee368b2fa8595066ce096322fe
 ```
 Este comando te permite regresar a un de hash de commit especifico, teniendo en cuenta que los archivos que fueron añadidos al repositorio local, se eliminaran permanente (hay que utilizar este comando con mucha precaución).
 
@@ -459,6 +376,10 @@ Este comando te permite regresar al working directory, si haz agregado archivos 
 
 ```xml
 git checkout -- <nombre del archivo>
+
+// Ejemplo
+
+git checkout -- index.html
 ```
 Este comando te permite resetear o simplemente devolver a la versión que estaba antes de utilizar dicho archivo, la información que tenia de elimina de forma permanente.
 
@@ -466,6 +387,10 @@ Este comando te permite resetear o simplemente devolver a la versión que estaba
 
 ```xml
 git merge <nombre de la rama a fusionar>
+
+// Ejemplo
+
+git merge develop
 ```
 Este comando te permite fusionar dos ramas y obtener la información del contenido completo en una sola rama, pero si existe conflictos de contenido se tendrán que resolver para poder fusionar y luego añadirlo al staged y realizar un mensaje de confirmación de dichas ramas fusionadas.
 
@@ -473,11 +398,19 @@ Este comando te permite fusionar dos ramas y obtener la información del conteni
 
 ```xml
 git clone <Url del repositorio remoto>
+
+// Ejemplo
+
+git clone https://github.com/davidorellana98/aprende-git.git
 ```
 Este comando te permitirá clonar un repositorio completo alojado en un servidor y traerlo a tu máquina local.
 
 ```xml
 git remote add origin <Url del repositorio remoto>
+
+// Ejemplo
+
+git remote add origin https://github.com/davidorellana98/aprende-git.git
 ```
 Este comando te permite vincularte o conectarte con un repositorio remoto.
 
@@ -490,23 +423,45 @@ Este comando te ayuda a saber los orígenes remotos conectados con el repositori
 git push -u origin <nombre de la rama>
 - o -
 git push --set-upstream origin <nombre de la rama>
+
+// Ejemplo
+
+git push -u origin main
+- o -
+git push --set-upstream origin main
 ```
 Este comando te permite subir tu código a un repositorio remoto conectado anteriormente. Si deseas subir un nuevo contenido a tu repositorio remoto, solo ejecutas el comando git push sin las demás especificaciones, teniendo en cuenta a la rama que se subió en el remoto.
 
 ```xml
 git push --force origin <nombre de la rama>
+
+// Ejemplo
+
+git push --force origin main
 ```
 Este comando te permite subir tu repositorio local al servidor remoto, de manera forzosa, es decir que va a ignorar cualquier conflicto que pueda ocurrir.
 
 ```xml
 git push origin --delete <nombre de la rama remota>
+
+// Ejemplo
+
+git push origin --delete develop-remote
 ```
 Este comando te permite borrar una rama que se encuentra en el repositorio remoto.
 
 ```xml
 git pull origin <nombre de la rama>
+
+// Ejemplo
+
+git pull origin main
 ```
 Este comando te permite bajar y obtener la ultima versión del código remoto a tu repositorio local.
+
+## Comandos de Linux
+
+Para aprender los comandos de Linux puedes visitar este repositorio de [GITHUB.](https://github.com/davidorellana98/aprende-linux)
 
 ## Contribuye con un comando 🤝
 
@@ -518,4 +473,4 @@ Si te ha parecido útil este repositorio apóyalo con una estrellita ⭐
 
 ## Licencia
 
-Consulte el archivo [LICENSE](https://github.com/davidorellana98/aprende-git/blob/main/LICENSE.md) para conocer los derechos y limitaciones de la licencia (MIT).
+Consulte el archivo [LICENSE](https://github.com/davidorellana98/aprende-git/blob/main/LICENSE.md) para conocer los derechos y limitaciones de la licencia (Creative Commons).
