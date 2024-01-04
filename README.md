@@ -6,6 +6,10 @@
 
 ```markdown
 git version
+- o -
+git --version
+- o -
+git -v
 ```
 Este comando te permite saber la versión actual que tienes instalada en tu ordenador.
 
@@ -52,7 +56,7 @@ git config --global user.name "<Tu nombre y apellido>"
 
 git config --global user.name "David Orellana"
 ```
-Este comando te permite colocar un nombre de usuario a git para tener presente quien trabaja en dicho proyecto.
+Este comando te permite colocar un nombre de usuario a git de manera global para tener presente quien trabaja en dicho proyecto.
 
 ```markdown
 git config --global user.email <dirección de correo electrónico>
@@ -61,7 +65,7 @@ git config --global user.email <dirección de correo electrónico>
 
 git config --global user.email ejemplo@gmail.com
 ```
-Este comando te permite asignar un correo electrónico a la configuración de git, es recomendable utilizar el email que tiene por defecto en su cuenta de Github, Gitlab o Bitbucket.
+Este comando te permite asignar un correo electrónico a la configuración de git de manera global, es recomendable utilizar el email que tiene por defecto en su cuenta de Github, Gitlab o Bitbucket.
 
 ```markdown
 git config --global init.defaultBranch <nombre de la rama principal>
@@ -70,7 +74,34 @@ git config --global init.defaultBranch <nombre de la rama principal>
 
 git config --global init.defaultBranch main
 ```
-Este comando te permite establecer la rama predeterminada al inicializar un nuevo repositorio (no cambia la rama predeterminada en repositorios ya existentes).
+Este comando te permite establecer la rama predeterminada al inicializar un nuevo repositorio (no cambia la rama predeterminada en repositorios ya existentes) de manera global.
+
+```markdown
+git config --global alias.<nombre de tu preferencia> "<nombre del comando completo>"
+
+// Ejemplo
+
+git config --global alias.arbol-commit "log --graph --decorate --all --oneline"
+```
+Este comando te permite colocar un nombre más corto a un comando de git en tu configuración global. Además con el mismo comando se puede sobreescribir la información del comando si hubo algún error en su implementación.
+
+```markdown
+git config --global --unset alias.<nombre del alias creado>
+
+// Ejemplo
+
+git config --global --unset alias.arbol-commit
+```
+Este comando te permite borrar el alias creado de tu configuración global.
+
+```markdown
+git config --get-all alias.<nombre del alias creado>
+
+// Ejemplo
+
+git config --get-all alias.arbol-commit
+```
+Este comando te permite mostrar la información del comando que esta asignado al alias creado.
 
 - **Comando para inicializar un proyecto**
 
@@ -222,12 +253,16 @@ Este comando te permite crear una nueva rama de trabajo, pero no te direcciona a
 
 ```markdown
 git branch -m <antiguo nombre de la rama> <nuevo nombre de la rama>
+- o -
+git branch -m <nuevo nombre de la rama>
 
 // Ejemplo
 
 git branch -m develop release
+- o -
+git branch -m release
 ```
-Este comando te permite cambiar el nombre de una rama existente.
+Este comando te permite cambiar el nombre de una rama existente, teniendo en cuenta la ubicación y nombre de la rama que se debesea cambiar.
 
 ```markdown
 git checkout -b <nombre de la rama>
@@ -400,6 +435,15 @@ git restore test.txt
 Este comando te permite descartar los cambios que se realizo en el archivo, antes de añadirlo al staging area (no esta permitido para archivos nuevos). Además permite restaurar un archivo que fue elimando, antes de añadir y hacer commit a dicho archivo, ya que si se lo realizada está especificando que a eliminado dicho archivo.
 
 ```markdown
+git reset <nombre del archivo>
+
+// Ejemplo
+
+git reset productos.json
+```
+Este comando te permite regresar un archivo añadido al stagig area y retornarlo de nuevo al working directory.
+
+```markdown
 git reset <hash del commit>
 
 // Ejemplo
@@ -438,12 +482,16 @@ Este comando te permite regresar al working directory, si haz agregado archivos 
 
 ```markdown
 git checkout -- <nombre del archivo>
+- o -
+git checkout <nombre del archivo>
 
 // Ejemplo
 
 git checkout -- index.html
+- o -
+git checkout index.html
 ```
-Este comando te permite resetear o simplemente devolver a la versión que estaba antes de utilizar dicho archivo, la información que tenia de elimina de forma permanente.
+Este comando te permite resetear o simplemente devolver a la versión que estaba antes de utilizar dicho archivo (sin añadirlo al staging area), la información que tenia de elimina de forma permanente.
 
 - **Comandos para eliminar archivos y directorios**
 
@@ -507,6 +555,40 @@ Este comando te permite fusionar dos ramas y obtener la información del conteni
 git merge --abort
 ```
 Este comando te permite abortar un proceso de fusión que esta en proceso y regresar al estado anterior antes de realizar un merge entre ramas.
+
+- **Comandos para listar, crear y eliminar Etiquetas en un repositorio**
+
+```markdown
+git tag <nombre de la etiqueta>
+
+// Ejemplo
+
+git tag v1.0.0
+```
+Este comando te permite crear una etiqueta ligera, que contendra el nombre y un puntero a una confirmación del repositorio del proyecto.
+
+```markdown
+git tag -a <nombre de la etiqueta> -m "<mensaje opcional de la etiqueta>"
+
+// Ejemplo
+
+git tag -a v1.0.0 -m "Versión 1.0.0"
+```
+Este comando te permite crear una etiqueta anotada, lo que significa que se almacena como un objeto completo de Git, es decir contendrá todos los metadatos asociados del repositorio como: el nombre de la persona que etiqueta, correo electrónico, fecha, confirmaciones y mensajes.
+
+```markdown
+git tag
+```
+Este comando te permite listar todas las etiquetas almacenadas en un repositorio.
+
+```markdown
+git tag -d <nombre de la etiqueta>
+
+// Ejemplo
+
+git tag -d v1.0.0
+```
+Este comando te permite eliminar una etiqueta almacenada localmente.
 
 - **Comandos para conectar e interactuar con un repositorio remoto**
 
@@ -579,11 +661,11 @@ Para aprender los comandos de Linux puedes visitar este repositorio de [GITHUB.]
 
 ## Contribuye con un comando 🤝
 
-Sabemos que el trabajo en equipo, es mucho más eficaz y tiene un mayor número de resultados, por eso te animo a que puedas contribuir con algunas correcciones del repositorio o algún comando adicional de Git, haciendo un **pull request** a este repositorio de Github.
+Sabemos que el trabajo en equipo, es mucho más eficaz y tiene un mayor número de resultados, por eso te animo a que puedas contribuir con algunas correcciones del repositorio o algún comando adicional de Git, haciendo un **fork** y un **pull request** a este repositorio de Github.
 
 Cada pull request que realices te ayudara a crecer como programador o programadora y además poder ayudar a miles de personas a saber más de los comandos de Git ❤️
 
-Si te ha parecido útil este repositorio apóyalo con una estrellita ⭐
+> ### Si te ha parecido útil este repositorio, apóyalo con una estrellita ⭐ ¡Muchas gracias!
 
 ## Licencia
 
